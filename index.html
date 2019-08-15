@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<head>
+    <title>我的简历</title>
+    <link rel="stylesheet" href="./a.css">
+    <script src="//at.alicdn.com/t/font_1336579_97tzvhhhcna.js"></script>
+    <style type="text/css">
+        .icon {
+           width: 1em; height: 1em;
+           vertical-align: -0.15em;
+           fill: currentColor;
+           overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="topNavBar clearfix">
+        <a class="logo" alt="logo" >
+            <span class="rs">RS</span><span class="card">card</span>
+        </a>
+        <nav>
+            <ul class="clearfix ">
+                <li><a href="#">关于</a></li>
+                <li><a href="#">技能</a></li>
+                <li><a href="#">作品</a></li>
+                <li><a href="#">经验</a></li>
+                <li><a href="#">日历</a></li>
+                <li><a href="#">博客</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="#">其他</a></li>
+            </ul>  
+        </nav>
+    </div>
+    <div class="banner">
+        <div class="mask"></div>
+    </div>
+    <main>
+        <div class="pcard">
+            <div class="pictureANDtext clearfix">
+                <div class="picture">
+                        <img src="./img/378264240-7e682f5c7adc253e.jpg " width=299px height="377" alt="头像">
+                </div>
+                <div class="text">
+                    <span class="welcome">Hello
+                        <span class="triangle"></span>
+                    </span>
+                    <h1>王海波</h1>
+                    <p>拥有丰富经验工程师</p>
+                    <hr width="470px">
+                    <dl>
+                        <dt>年龄</dt>
+                        <dd>18</dd>
+                        <dt>所在城市</dt>
+                        <dd>上海</dd>
+                        <dt>邮箱</dt>
+                        <dd>777555577@3a3.com</dd>
+                        <dt>手机</dt>
+                        <dd>189999324287</dd>
+                        <dt>毕业时间</dt>
+                        <dd>2936年</dd>
+                    </dl>
+                </div>
+            </div>          
+            <div class="footer">
+                <footer class="media">
+                    <a href="#" >
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-weibo"></use>
+                        </svg>
+                    </a>
+                    <a href="#" >
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-qq-copy"></use>
+                        </svg>
+                    </a>
+                    <a href="#" >
+                        <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-tubiao209"></use>
+                        </svg>
+                    </a>
+                    <a href="#" >
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-i-wechat"></use>
+                        </svg>
+                    </a>
+                </footer>
+            </div>
+        </div>
+        <p class="button-wrapper">
+            <a href="./cv.pdf" target="_blank" download class="button">下载我的简历</a>
+        </p>
+        <p class="selfIntroduction">
+        高执行力：领导及自我设定的工作不折不扣的高效完成<br>
+        高责任心：自己工作相关内容加班加点也会完成，当日事当日闭，凡事从自身找问题
+        </p>
+    </main>
+    <section class="skills" >
+        <h2>技能</h2>
+        <ol class="clearfix">
+            <li>
+                <h3>
+                html 5 &apm; css 3
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:20%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                JavaScript
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:98%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                PHP & MySQL
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:70%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                Photoshop
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:87%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                WORD
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:60%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                Photoshop
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width:5%"></div>
+                </div>
+            </li>
+        </ol>
+    </section>
+    <section class="portfolio">
+        <h2>作品集</h2>
+        <nav>
+            <ol class="clearfix">
+                <li id="portfolio1">所有</li>
+                <li id="portfolio2">框架</li>
+                <li id="portfolio3">无框架</li>
+            </ol>
+            <div id="portfoliobar" class="bar state-1">
+                <div class="barinner"></div>
+            </div>
+        </nav>
+        <script>
+            portfolio1.onclick=function(){
+                portfoliobar.className="bar state-1"
+        }
+            portfolio2.onclick=function(){
+                portfoliobar.className="bar state-2"
+        }
+            portfolio3.onclick=function(){
+                portfoliobar.className="bar state-3"
+        }
+        </script>
+        <div class="jobs">
+            <div class="big" style="left: 0; top: 0;">
+                <img src="./img/1.jpg" alt="图片1">
+            </div>
+            <div class="small" style="left: 646px; top: 0;">
+                <img src="./img/2.jpg" alt="图片2">
+            </div>
+            <div class="small" style="left: 646px; top: 298px;">
+                <img src="./img/3.jpg" alt="图片3">
+            </div>
+        </div>
+    </section>
+</body>

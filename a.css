@@ -1,0 +1,310 @@
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both
+}
+body{
+    background-color: #efefef;
+    margin: 0;
+}
+ol,ul{
+    list-style: none;
+}
+h1,h2,h3,h4{
+    font-weight: normal;
+}
+.topNavBar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+.topNavBar>a{
+    float: left;
+    text-decoration: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.topNavBar .logo .rs{
+    font-size: 30px;
+    font-family: 华文琥珀;
+    color: rgba(232,103,107,100);
+    margin: 4px 4px 4px 20px;
+    padding-top: 1px;
+}
+.topNavBar .logo .card{
+    font-size: 30px;
+    font-family: 华文琥珀;
+    color: rgba(154,167,163,100);
+    padding-top: 1px;
+
+}
+.topNavBar>nav{
+    float: right;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.topNavBar>nav>ul{
+    list-style: none; margin: 0;padding: 0;border: 0;
+
+}
+.topNavBar>nav>ul>li{
+    float: left;
+    margin-left:17px;
+    margin-right:17px;
+}
+.topNavBar>nav>ul>li>a{
+    font-size: 12px;
+    color: #B7B7B7;
+    text-decoration: none;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+}
+.topNavBar>nav>ul>li>a:hover{
+    border-bottom: 3px solid red;
+}
+.banner{
+    background-image: url(./img/wallhaven-13g8lg.jpg);
+    height: 515px;
+    background-size: cover;
+}
+.banner .mask{
+    height: 515px;
+    background-color: rgba(0,0,0,0.6);
+}
+body>main{
+    margin-top: -340px;
+}
+.pcard{
+    max-width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+    box-shadow: 0px 2px 7px -2px rgba(74,74,67,0.7);
+}
+.pcard .picture{
+    float: left;
+    padding-right: 65px;
+}
+.pcard .text{
+    float: left;
+    width:470px;
+}
+.pcard .welcome{ 
+    background-color: #E6686A;
+    color: white;
+    display:inline-block;
+    padding: 4px 12px;
+    line-height: 22px;
+    position: relative; 
+}
+.triangle{
+    display: block;
+    border: 10px solid transparent;
+    width: 0px;
+    border-left-color: #E6686A;
+    border-top-width: 0px;
+    position: absolute;
+    top:100%;
+    left:4px;
+}
+.pcard .pictureANDtext{
+    padding: 50px;
+    padding-bottom: 10px;
+}
+.pcard .text>h1{
+    padding:0px;
+    border:0px;
+    margin: 36px 0 0 0 ;
+    font-weight: 400;
+}
+.pcard .text>p{
+    /* margin-block-start: 2px; */
+    margin:0 0 0 0;
+}
+.pcard .text>dl{
+    padding:0px;
+    margin:0px;
+    margin-top: 20px;
+}
+.pcard .text>dl>dt{
+    float: left;
+    margin:0;
+    width: 30%;
+    font-weight:bold;
+    padding-bottom: 10px;
+}
+.pcard .text>dl>dd{
+    float: left;
+    margin:0;
+    width: 70%;
+    padding-bottom: 10px;
+    color:#9da0a7;
+}
+.pcard .footer{
+    background-color: #E6686A
+}
+.pcard svg{
+    fill: white;
+    width: 20px;
+    height: 20px;
+}
+.pcard .footer .media{
+    text-align: center;
+}
+.media>a{
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    line-height: 40px;
+    padding: 5px;
+    margin: 20px 50px;
+}
+.media>a:hover{
+    background-color: #CF5D5F;
+}
+body>main .button{
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 16px;
+    padding:21px 55px;
+    display: inline-block;
+    border: 1px solid #cdcfd1;
+    background-color: #efefef;
+    border-radius: 4px;
+    color: #6d4451;
+    font-weight: bold; 
+    transition: box-shadow 0.2s;
+}
+body>main .button-wrapper{
+    text-align: center; 
+    margin: 32px 0;
+}
+body>main .button:hover{
+    box-shadow: 0px 5px 10px 1px rgba(74,74,67,0.4);
+}
+.selfIntroduction{
+    max-width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    line-height: 30px;
+    font-family: cursive;
+}
+section.skills{
+    max-width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+}
+section.portfolio>h2,
+section.skills>h2{
+    text-align: center; 
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;   
+    font-weight: 600;
+}
+.skills>ol{
+    background-color: white;
+    box-shadow: 0px 2px 7px -2px rgba(74,74,67,0.7);
+    padding: 0px 50px 40px 50px;
+}
+.skills>ol>li{
+    float:left;
+    width: 48%;
+    /* box-sizing: border-box;
+    padding-right: 20px; */
+}
+.skills>ol>li:nth-child(even){
+    float: right;
+}
+.skills>ol>li>h3{
+    font-size: 14PX;
+    color: #3d4451;
+    line-height: 15px;
+    font-style: normal;
+    margin-block-end: 3px;
+    padding-top:25px;   
+}
+.progressBar{
+    height: 5px;
+    width: 100%;
+    background-color:rgba(250,225,225);
+    border-radius: 2px;
+}
+.progress{
+    background-color:rgba(232,103,107);
+    height: 100%;
+    width: 50%;
+    border-radius: 2px;
+}
+.portfolio{
+    text-align: center;
+}
+.portfolio>nav>ol{
+    text-align: center;
+    display: inline-block;
+    padding: 0;
+    margin: 0 0 4px 0;
+}
+.portfolio>nav{
+    display: inline-block;
+    text-align: center;
+}
+.portfolio>nav>ol>li{
+    float: left;
+    padding-left: 40px;
+    font-weight:500;
+    cursor: pointer;
+}
+.portfolio>nav>ol>li:first-child{
+    padding-left: 0;
+}
+.portfolio .bar{
+    height: 5px;
+    width: 100%;
+    background-color:white;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+.portfolio .barinner{
+    background-color:rgba(232,103,107);
+    height: 100%;
+    border-radius: 2px;
+    transition: 0.2s;
+}
+.portfolio .bar.state-1 .barinner{
+    width: 20%;
+    margin-left: 0;
+}
+.portfolio .bar.state-2 .barinner{
+    width: 20%;
+    margin-left: 69px;
+}
+.portfolio .bar.state-3 .barinner{
+    width: 27%;
+    margin-left: 140px;
+}
+.jobs{
+    position: relative;
+    width: 940px;
+    height: 576px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+}
+.jobs>div{
+    box-shadow: 0px 2px 7px -2px rgba(74,74,67,0.7);
+}
+.jobs .big,
+.jobs .small{
+    position: absolute;
+}
+.big>img{
+    vertical-align: top;
+}
+.small>img{
+    vertical-align: top;
+}
