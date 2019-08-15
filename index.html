@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <head>
     <title>我的简历</title>
-    <link rel="stylesheet" href="./a.css">
+    <link rel="stylesheet" href="./mian.css">
+    <link rel="stylesheet" href="./loading.css">
     <script src="//at.alicdn.com/t/font_1336579_97tzvhhhcna.js"></script>
     <style type="text/css">
         .icon {
@@ -10,23 +11,54 @@
            fill: currentColor;
            overflow: hidden;
         }
+        .siteWelcome{
+            display:none;
+            position: fixed;
+            top:0; left:0; width: 100%;height: 100%;
+            background: #888;
+            z-index: 1;
+            justify-content: center;
+            align-items:center; 
+        }
+        .siteWelcome.active{
+            display: flex;
+        }
     </style>
 </head>
 <body>
-    <div class="topNavBar clearfix">
+    <div id="siteWelcome" class="siteWelcome active">
+        <div class="loading"></div>
+    </div>
+    <div id="topNavBar" class="topNavBar clearfix">
         <a class="logo" alt="logo" >
             <span class="rs">RS</span><span class="card">card</span>
         </a>
-        <nav>
+        <nav class="menu">
             <ul class="clearfix ">
-                <li><a href="#">关于</a></li>
-                <li><a href="#">技能</a></li>
-                <li><a href="#">作品</a></li>
-                <li><a href="#">经验</a></li>
-                <li><a href="#">日历</a></li>
-                <li><a href="#">博客</a></li>
-                <li><a href="#">联系方式</a></li>
-                <li><a href="#">其他</a></li>
+                <li>
+                    <a href="#siteAbout">关于</a>
+                </li>
+                <li><a href="#siteSkills">技能</a></li>
+                <li>
+                    <a href="#siteWorks">作品</a>
+                    <ul class="navMenu">
+                        <li>作品1</li>
+                        <li>作品2</li>
+                        <li>作品3</li>
+                    </ul>
+                </li>
+                <li><a href="#siteExperience">经验</a></li>
+                <li><a href="#siteCalendar">日历</a></li>
+                <li>
+                    <a  href="#siteBlog">博客</a>
+                    <ul class="navMenu">
+                        <li>博客1</li>
+                        <li>博客2</li>
+                        <li>博客3</li>
+                    </ul>
+                </li>
+                <li><a href="#siteContact">联系方式</a></li>
+                <li><a href="#siteOthers">其他</a></li>
             </ul>  
         </nav>
     </div>
@@ -34,7 +66,7 @@
         <div class="mask"></div>
     </div>
     <main>
-        <div class="pcard">
+        <div id="siteAbout" class="pcard">
             <div class="pictureANDtext clearfix">
                 <div class="picture">
                         <img src="./img/378264240-7e682f5c7adc253e.jpg " width=299px height="377" alt="头像">
@@ -93,7 +125,7 @@
         高责任心：自己工作相关内容加班加点也会完成，当日事当日闭，凡事从自身找问题
         </p>
     </main>
-    <section class="skills" >
+    <section id="siteSkills" class="skills" >
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -146,7 +178,7 @@
             </li>
         </ol>
     </section>
-    <section class="portfolio">
+    <section id="siteWorks" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -181,4 +213,39 @@
             </div>
         </div>
     </section>
+    <script>
+       setTimeout(function(){
+           siteWelcome.classList.remove('active')},1000)
+        window.onscroll=function(){
+            if(window.scrollY>0){
+                topNavBar.classList.add('sticky')
+            }else{
+                topNavBar.classList.remove('sticky')
+            }
+        }
+        let liTags=document.querySelectorAll('nav.menu > ul > li')
+        for(let i=0; i<liTags.length; i++){
+            liTags[i].onmouseenter = function(x){
+            let li=x.currentTarget
+            li.classList.add('active')
+            }
+        }
+        for(let i=0; i<liTags.length; i++){
+            liTags[i].onmouseleave = function(x){
+            let li=x.currentTarget
+            li.classList.remove('active')
+            }
+        }
+        let aTags=document.querySelectorAll('nav.menu > ul > li > a')
+        for(let i=0;i<aTags.length;i++){
+            aTags[i].onclick = function(x){
+                x.preventDefault()
+                let a = x.currentTarget
+                let href  =  a.getAttribute('href')
+                let element = document.querySelector(href)
+                if(element){let top = element.offsetTop
+                window.scrollTo(0,top - 80)}
+            }
+        }
+    </script>
 </body>
