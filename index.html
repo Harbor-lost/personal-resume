@@ -4,26 +4,7 @@
     <link rel="stylesheet" href="./mian.css">
     <link rel="stylesheet" href="./loading.css">
     <script src="//at.alicdn.com/t/font_1336579_97tzvhhhcna.js"></script>
-    <style type="text/css">
-        .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
-        }
-        .siteWelcome{
-            display:none;
-            position: fixed;
-            top:0; left:0; width: 100%;height: 100%;
-            background: #888;
-            z-index: 1;
-            justify-content: center;
-            align-items:center; 
-        }
-        .siteWelcome.active{
-            display: flex;
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
 </head>
 <body>
     <div id="siteWelcome" class="siteWelcome active">
@@ -66,7 +47,7 @@
         <div class="mask"></div>
     </div>
     <main>
-        <div id="siteAbout" class="pcard">
+        <div data-x id="siteAbout" class="pcard">
             <div class="pictureANDtext clearfix">
                 <div class="picture">
                         <img src="./img/378264240-7e682f5c7adc253e.jpg " width=299px height="377" alt="头像">
@@ -125,7 +106,7 @@
         高责任心：自己工作相关内容加班加点也会完成，当日事当日闭，凡事从自身找问题
         </p>
     </main>
-    <section id="siteSkills" class="skills" >
+    <section data-x id="siteSkills" class="skills" >
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -178,7 +159,7 @@
             </li>
         </ol>
     </section>
-    <section id="siteWorks" class="portfolio">
+    <section data-x="" id="siteWorks" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -214,15 +195,45 @@
         </div>
     </section>
     <script>
-       setTimeout(function(){
+    function animate(time) {
+        requestAnimationFrame(animate);
+        TWEEN.update(time);}
+        requestAnimationFrame(animate);
+        setTimeout(function(){
            siteWelcome.classList.remove('active')},1000)
+
+        let specialTags=document.querySelectorAll('[data-x]')
+        for(let i=0;i<specialTags.length;i++){
+            specialTags[i].classList.add('down')
+        }
+        setTimeout(function(){
+           yyy()},1500)
         window.onscroll=function(){
             if(window.scrollY>0){
                 topNavBar.classList.add('sticky')
             }else{
                 topNavBar.classList.remove('sticky')
             }
+            yyy()
         }
+        function yyy(){
+            
+            let minIndex = 0
+            for(let i=0;i<specialTags.length;i++){
+                if(Math.abs(specialTags[i].offsetTop - window.scrollY)<Math.abs(specialTags[minIndex].offsetTop-window.scrollY))
+                minIndex = i
+            }
+            specialTags[minIndex].classList.remove('down')
+            let id =specialTags[minIndex].id
+            let a  =document.querySelector('a[href="#'+id+'"]')
+            let li =a.parentNode
+            let brothersAndMe = li.parentNode.children
+            for(let i=0;i<brothersAndMe.length;i++){
+                brothersAndMe[i].classList.remove('highlight')
+            }
+            li.classList.add('highlight')
+        }
+
         let liTags=document.querySelectorAll('nav.menu > ul > li')
         for(let i=0; i<liTags.length; i++){
             liTags[i].onmouseenter = function(x){
@@ -238,13 +249,24 @@
         }
         let aTags=document.querySelectorAll('nav.menu > ul > li > a')
         for(let i=0;i<aTags.length;i++){
-            aTags[i].onclick = function(x){
+                aTags[i].onclick = function(x){
                 x.preventDefault()
                 let a = x.currentTarget
                 let href  =  a.getAttribute('href')
                 let element = document.querySelector(href)
-                if(element){let top = element.offsetTop
-                window.scrollTo(0,top - 80)}
+                let currentTop=window.scrollY
+                let targetTop=element.offsetTop-80
+                let s=targetTop-currentTop
+                var t = Math.abs((s/100)*300)
+                if(t>=500){ t = 500 }
+                var coords = { x:0,y: currentTop };
+                var tween = new TWEEN.Tween(coords)
+                    .to({x:0, y: targetTop }, t) 
+                    .easing(TWEEN.Easing.Circular.InOut) 
+                    .onUpdate(() => { 
+                        window.scrollTo(0,coords.y)
+                    })
+                    .start();
             }
         }
     </script>
